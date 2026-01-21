@@ -2,6 +2,13 @@
 
 A high-octane 3D rhythm racing game built for the Gemini API Developer Competition. Experience a cyber-industrial race track where your speed is determined by your rhythm, and the atmosphere is powered by real-time AI.
 
+## 📁 Project Structure
+
+This project is organized into two specialized repositories to optimize performance and maintainability:
+
+- **[Game Logic (This Repo)](https://github.com/your-username/rhythm-race-3d)**: Contains the React/Three.js source code, Gemini API integrations, and game mechanics.
+- **[Game Assets Repo](https://github.com/A-Nasser-Unity/Game_Assets)**: A dedicated repository for heavy binary files (3D GLB models, high-quality OGG audio) delivered via high-speed CDN.
+
 ## 🚀 Features
 
 - **Rhythm-Based Racing**: Hit notes in 4 lanes to maintain speed and outpace a rival AI.
