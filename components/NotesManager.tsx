@@ -151,9 +151,9 @@ export const NotesManager: React.FC<NotesManagerProps> = ({
     keysUsedThisFrame.current = [false, false, false, false];
 
     const isNearEnd = timeLeft <= 3;
-    const isRestPeriod = timeLeft <= 60 && timeLeft > 57;
-    const isPreRestPeriod = timeLeft <= 63 && timeLeft > 60;
-    const canSpawn = timeLeft > 0 && !isNearEnd && !isRestPeriod && !isPreRestPeriod;
+    // Updated: Consolidated 6s pause into a single 3s pause (at midpoint)
+    const isMidRacePause = timeLeft <= 61 && timeLeft > 58;
+    const canSpawn = timeLeft > 0 && !isNearEnd && !isMidRacePause;
 
     if (canSpawn && currentTime - lastSpawnTime.current > config.interval) {
       const hasPassed40Seconds = timeLeft <= 79;

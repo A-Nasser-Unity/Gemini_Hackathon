@@ -66,7 +66,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinished, isAudioReady,
 
   useEffect(() => {
     if (isReady) {
-      const timer = setTimeout(onFinished, 2000);
+      // Extended visibility to 5 seconds to ensure player can read the news
+      const timer = setTimeout(onFinished, 5000);
       return () => clearTimeout(timer);
     }
   }, [isReady, onFinished]);
@@ -94,7 +95,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinished, isAudioReady,
           <div className="h-full bg-blue-500 transition-all duration-300 shadow-[0_0_10px_#3b82f6]" style={{ width: `${progress}%` }}></div>
         </div>
         <div className="text-blue-500/50 text-[10px] uppercase tracking-[0.5em] animate-pulse">
-          {isReady ? 'SYNCHRONIZATION COMPLETE' : `UPDATING NEWS ${Math.round(progress)}%`}
+          {isReady ? 'COMM LINK STABLE - READY TO DROP' : `SYNCHRONIZING NEWS FEED ${Math.round(progress)}%`}
         </div>
       </div>
     </div>
